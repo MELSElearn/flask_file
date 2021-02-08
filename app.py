@@ -27,13 +27,13 @@ def upload_file():
     print(nparr)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-    Facecascde = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    Facecascde = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
     faces = Facecascde.detectMultiScale(img_gray, 1.5, 3)
     for (x, y, w, h) in faces:
       img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
     #f.save(secure_filename(f.filename))
     #return 'file uploaded successfully'
-    cv2_imshow(img)
+    #cv2_imshow(img)
 
     # turn image processed to base64
     
