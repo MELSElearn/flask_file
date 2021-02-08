@@ -1,5 +1,5 @@
 import os
-import flask
+
 from flask import Flask
 from flask import render_template, request
 from currency_converter import CurrencyConverter
@@ -14,20 +14,12 @@ def form():
 
 @app.route("/", methods=["POST"])
 def my_form_post():
-    imagefile = flask.request.files.get('imagefile', '')
+    c = CurrencyConverter()
 
-@app.route('/uploader', methods = ['GET', 'POST'])
-def upload_file():
-    return render_template("index.html") 
-    #if request.method == 'POST':
-    #    print(request.method)
-    #imagefile = flask.request.files.get('imageUpload', '')
-    
-    #f = request.files['file']
-    #f.save(secure_filename(f.filename))
-    #return 'file uploaded successfully'
-     
-    
+    euros = request.form["euros"]
+    usd = round(c.convert(euros, "EUR", "USD"), 2)
+
+    return render_template("index.html", euros=euros, usd=usd)
 
 
 if __name__ == "__main__":
