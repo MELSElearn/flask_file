@@ -14,12 +14,7 @@ def form():
 
 @app.route("/", methods=["POST"])
 def my_form_post():
-    c = CurrencyConverter()
-
-    euros = request.form["euros"]
-    usd = round(c.convert(euros, "EUR", "USD"), 2)
-
-    return render_template("index.html", euros=euros, usd=usd)
+   return render_template("index.html")
 
 
 if __name__ == "__main__":
