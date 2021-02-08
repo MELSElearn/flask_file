@@ -25,6 +25,12 @@
   </style>
 </head>
 <body>
-  <input type="file" id="imageUpload">
+  <img src="{{ user_image }}" alt="User Image">
+ 
+  <form action = "https://takepic-rj5kbitiea-df.a.run.app/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+          <input type="file" id="imageUpload">
+         <input type = "submit"/>
+  </form>
 </body>
 </html>
