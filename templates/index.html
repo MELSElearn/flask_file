@@ -25,9 +25,9 @@
   </style>
 </head>
 <body>
-  <img src="{{ user_image }}" alt="User Image">
- 
-  <form method = "POST" >
+
+  <img src="data:image/jpeg;base64,{{ user_image }}" alt="User Image">
+  <form method = "POST" enctype="multipart/form-data">
           <input type="file" id="imageUpload" name="imageUpload">
          <input type = "submit"/>
   </form>
