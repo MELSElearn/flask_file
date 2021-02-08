@@ -19,11 +19,12 @@ def my_form_post():
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file():
    if request.method == 'POST':
-    imagefile = flask.request.files.get('imageUpload', '')
+    #imagefile = flask.request.files.get('imageUpload', '')
+    
     #f = request.files['file']
     #f.save(secure_filename(f.filename))
     #return 'file uploaded successfully'
-      
+    return("File Upload")  
     
 
 
