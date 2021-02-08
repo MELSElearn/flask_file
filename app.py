@@ -30,7 +30,8 @@ def upload_file():
     Facecascde = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
     faces = Facecascde.detectMultiScale(img_gray, 1.5, 3)
     for (x, y, w, h) in faces:
-      img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        print(x)
+        img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
     #f.save(secure_filename(f.filename))
     #return 'file uploaded successfully'
     #cv2_imshow(img)
