@@ -45,7 +45,7 @@ def upload_file():
 
     _, im_arr = cv2.imencode('.png', img)  # im_arr: image in Numpy one-dim array format.
     im_bytes = im_arr.tobytes()
-    im_b64 = base64.b64encode(im_bytes)
+    im_b64 = b64encode(im_bytes)
 
 
     return render_template("index.html", user_image = im_b64)
